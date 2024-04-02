@@ -12,18 +12,18 @@ const foodItems = <FoodItem>[
   FoodItem(
       category: 'Desayunos',
       link: '/breakfastsScreen',
-      icon: Icons.food_bank,
+      icon: Icons.breakfast_dining,
       image: 'assets/breakfast.png'),
       
   FoodItem(
       category: 'Almuerzos',
       link: '/lunchesScreen',
-      icon: Icons.restaurant,
+      icon: Icons.lunch_dining,
       image: 'assets/breakfast.png'),
   FoodItem(
       category: 'Cenas',
       link: '/dinnersScreen',
-      icon: Icons.local_dining,
+      icon: Icons.dinner_dining,
       image: 'assets/breakfast.png'),
   FoodItem(
       category: 'Aperitivos',

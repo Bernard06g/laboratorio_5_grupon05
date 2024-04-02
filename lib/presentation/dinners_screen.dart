@@ -8,7 +8,7 @@ class DinnersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
          backgroundColor: colors.primary,
-        title: const Text("Almuerzos"),
+        title: const Text("Cenas"),
       ),
     );
   }

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:laboratorio_5_grupon05/config/food_items.dart';
+import 'package:laboratorio_5_grupon05/config/breakfast_items.dart';
 
-class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({super.key});
+class ListViewBreakfastWidget extends StatelessWidget {
+  const ListViewBreakfastWidget({super.key});
 
-  @override
+   @override
 Widget build(BuildContext context) {
   //agarra los colores que se asignaron en el app_theme
   final colors = Theme.of(context).colorScheme;
 
   return ListView.builder(
-    itemCount: foodItems.length,
+    itemCount: breakfastItem.length,
     itemBuilder: (BuildContext context, int index) {
-      final foodItem = foodItems[index];
+      final foodItem = breakfastItem[index];
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
@@ -28,5 +28,4 @@ Widget build(BuildContext context) {
     },
   );
 }
-
 }
