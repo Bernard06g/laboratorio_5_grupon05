@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:laboratorio_5_grupon05/config/app_theme.dart';
 import 'package:laboratorio_5_grupon05/presentation/breakfasts_screen.dart';
+import 'package:laboratorio_5_grupon05/presentation/dinners_screen.dart';
+import 'package:laboratorio_5_grupon05/presentation/lunches_screen.dart';
+import 'package:laboratorio_5_grupon05/presentation/snacks_screen.dart';
 import 'package:laboratorio_5_grupon05/widgets/food_list_view_widget.dart';
 
 void main() {
@@ -21,9 +24,9 @@ class MyApp extends StatelessWidget {
       home: const HomePage(),
       routes: {
        '/breakfastsScreen':(context)=> const BreakfastsScreen(),
-       // '/progress':(context)=> const ProgressIndicatorSCreen(),
-      //  '/controls':(context)=> const ControlScreen(),
-       // '/buttons':(context)=> const buttonsScreen(),
+       '/lunchesScreen':(context)=> const LunchesScreen(),
+        '/dinnersScreen':(context)=> const DinnersScreen(),
+       '/snacksScreen':(context)=> const SnacksScreen(),
 
       },
     );
