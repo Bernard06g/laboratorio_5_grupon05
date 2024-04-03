@@ -6,7 +6,9 @@ import 'package:laboratorio_5_grupon05/presentation/dinners_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/lunches_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/pancakes_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/snacks_screen.dart';
-import 'package:laboratorio_5_grupon05/presentation/tostadasFrancesas_scree.dart';
+import 'package:laboratorio_5_grupon05/presentation/tostadas_screen.dart';
+
+
 import 'package:laboratorio_5_grupon05/widgets/food_list_view_widget.dart';
 
 void main() {
@@ -27,10 +29,10 @@ class MyApp extends StatelessWidget {
       routes: {
        '/breakfastsScreen':(context)=> const BreakfastsScreen(),
        '/lunchesScreen':(context)=> const LunchesScreen(),
-        '/dinnersScreen':(context)=> const DinnersScreen(),
+      '/dinnersScreen':(context)=> const DinnersScreen(),
        '/snacksScreen':(context)=> const SnacksScreen(),
        '/pancakesScreen':(context)=> const PancakesScreen(),
-      '/tostadasFrancesas':(context)=> const TostadasFrancesasScreen(),
+      '/tostadasFrancesas':(context)=> const TostadasScreen(),
       },
       
     );
