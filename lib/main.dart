@@ -7,6 +7,7 @@ import 'package:laboratorio_5_grupon05/presentation/lunches_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/pancakes_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/snacks_screen.dart';
 import 'package:laboratorio_5_grupon05/presentation/tostadas_screen.dart';
+import 'package:laboratorio_5_grupon05/widgets/food_list_view_recetas_widget.dart';
 
 
 import 'package:laboratorio_5_grupon05/widgets/food_list_view_widget.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
        '/snacksScreen':(context)=> const SnacksScreen(),
        '/pancakesScreen':(context)=> const PancakesScreen(),
       '/tostadasFrancesas':(context)=> const TostadasScreen(),
+      '/recetasScreen':(context)=> const ListViewRecetasWidget(),
       },
       
     );
