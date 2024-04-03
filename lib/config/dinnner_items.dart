@@ -25,7 +25,7 @@ const dinnerItem = <DinnerItem>[
       category: 'Sopa Azteca',
       link: '/recetasDScreen',
       icon: Icons.breakfast_dining_outlined,
-      image: 'assets/breakfast.png',
+      image: 'assets/sopa.jpg',
       steps: [
         '1. En una cacerola grande, calienta un poco de aceite de oliva a fuego medio.',
         '2. Agrega la cebolla y el ajo picados y cocina hasta que estén suaves y fragantes, unos 5 minutos.',
@@ -57,7 +57,7 @@ const dinnerItem = <DinnerItem>[
       category: 'Pollo Asado con Verduras',
       link: '/recetasDScreen',
       icon: Icons.breakfast_dining_rounded,
-      image: 'assets/breakfast.png',
+      image: 'assets/pollo.jpg',
       steps: [
         '1. Precalienta el horno a 200°C (400°F).',
         '2. En un tazón grande, mezcla el aceite de oliva, el ajo picado, el jugo de limón, el tomillo, el romero, la sal y la pimienta.',
@@ -82,7 +82,7 @@ const dinnerItem = <DinnerItem>[
     category: 'Salmón con Ensalada de Quinoa',
     link: '/recetasDScreen',
     icon: Icons.dinner_dining,
-    image: 'assets/dinner.png',
+    image: 'assets/salmon.jpg',
     steps: [
       '1: Cocina la quinoa según las instrucciones del paquete y deja que se enfríe.',
       '2: Mezcla la quinoa cocida con tomate cherry cortado por la mitad, pepino picado, pimiento rojo picado, cebolla morada picada, y hojas de espinaca.',
@@ -112,7 +112,7 @@ const dinnerItem = <DinnerItem>[
       category: 'Risotto de Champiñones',
       link: '/recetasDScreen',
       icon: Icons.breakfast_dining,
-      image: 'assets/breakfast.png',
+      image: 'assets/risotto.jpg',
       steps: [
         '1. En una olla grande, calienta el caldo de pollo y mantenlo caliente a fuego lento.',
         '2. En otra olla grande o sartén, derrite la mantequilla a fuego medio. Agrega la cebolla picada y cocina hasta que esté transparente.',

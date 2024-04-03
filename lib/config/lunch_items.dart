@@ -19,7 +19,7 @@ const lunchItem = <LunchItem>[
     category: 'Arroz con Camarones',
     link: '/recetasLScreen',
     icon: Icons.breakfast_dining_outlined,
-    image: 'assets/breakfast.png',
+    image: 'assets/arroz.jpg',
     steps: ['1.  Cocinar el arroz', '2. Preparar los camarones', '3. Mezclar el arroz con los camarones'],
     ingredientes: [
       "6 tazas de caldo de pollo",
@@ -38,7 +38,7 @@ const lunchItem = <LunchItem>[
     category: 'Lasaña',
     link: '/recetasLScreen',
     icon: Icons.breakfast_dining_rounded,
-    image: 'assets/breakfast.png',
+    image: 'assets/lasaña.jpg',
     steps: ['1. Preparar la carne y la salsa de tomate', '2. Cocinar la pasta de lasaña', '3. Armar la lasaña y hornear'],
     ingredientes: [
       "500g de carne molida",
@@ -55,7 +55,7 @@ const lunchItem = <LunchItem>[
     category: 'Pasta',
     link: '/recetasLScreen',
     icon: Icons.breakfast_dining_sharp,
-    image: 'assets/breakfast.png',   
+    image: 'assets/pasta.jpg',   
     steps: ['1.  Cocinar la pasta en agua hirviendo', '2.  Preparar la salsa de tu elección', '3. Mezclar la pasta con la salsa'],
     ingredientes: [
       "400g de pasta (espagueti, penne, etc.)",
@@ -72,7 +72,7 @@ const lunchItem = <LunchItem>[
     category: 'Chifrijo',
     link: '/recetasLScreen',
     icon: Icons.breakfast_dining,
-    image: 'assets/breakfast.png',    
+    image: 'assets/chifrijo.jpg',    
     steps: ['1. Freír el arroz', '2.  Preparar los frijoles', '3. Montar el chifrijo con carne de cerdo, aguacate, pico de gallo y chips de plátano'],
     ingredientes: [
       "2 tazas de arroz blanco cocido",
