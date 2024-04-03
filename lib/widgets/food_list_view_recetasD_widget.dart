@@ -1,82 +1,32 @@
-import 'package:flutter/material.dart';
-import 'package:another_stepper/another_stepper.dart';
+// ignore_for_file: avoid_print, unused_local_variable
 
-class TostadasScreen extends StatelessWidget {
-  const TostadasScreen({super.key});
+import 'package:flutter/material.dart';
+import 'package:laboratorio_5_grupon05/config/dinnner_items.dart';
+
+
+
+class ListViewRecetasDWidget extends StatelessWidget {
+  const ListViewRecetasDWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    List<StepperData> stepperData = [
-      StepperData(
-          title: StepperText(
-            "Inicio",
-            textStyle: const TextStyle(),
-          ),
-          subtitle: StepperText(
-              'En un tazón, batir vigorosamente los huevos, la leche evaporada Ideal®, el azúcar, la vainilla, la canela y la nuez moscada. Dejar reposar la mezcla 5 minutos'),
-          iconWidget: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: colors.primary,
-                borderRadius: const BorderRadius.all(Radius.circular(30))),
-            child: const Icon(Icons.looks_one, color: Colors.white),
-          )),
-      StepperData(
-          //title: StepperText("Preparing"),
-          subtitle: StepperText(
-              "En un sartén a fuego medio, derretir la mantequilla"),
-          iconWidget: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: colors.primary,
-                borderRadius: const BorderRadius.all(Radius.circular(30))),
-            child: const Icon(Icons.looks_two, color: Colors.white),
-          )),
-      StepperData(
-          //title: StepperText("On the way"),
-          subtitle: StepperText(
-              "Colocar una rebanada de pan en la mezcla preparada y dejarlo 30 segundos por cada lado para que el pan absorba los sabores."),
-          iconWidget: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: colors.primary,
-                borderRadius: const BorderRadius.all(Radius.circular(30))),
-            child: const Icon(Icons.looks_3, color: Colors.white),
-          )),
-      StepperData(
-          //title: StepperText("On the way"),
-          subtitle: StepperText(
-              " Escurrir el exceso de mezcla en el plato y colocar el pan en el sartén. Cocinar 2 minutos por cada lado (dependerá del grosor del pan) o hasta que estén dorados y firmes"),
-          iconWidget: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: colors.primary,
-                borderRadius: const BorderRadius.all(Radius.circular(30))),
-            child: const Icon(Icons.looks_3, color: Colors.white),
-          )),
-      StepperData(
-          //title: StepperText("On the way"),
-          subtitle: StepperText(
-              "  Retirar del sartén, cubrir con miel, azúcar pulverizada o fresas y disfrutar."),
-          iconWidget: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: colors.primary,
-                borderRadius: const BorderRadius.all(Radius.circular(30))),
-            child: const Icon(Icons.looks_3, color: Colors.white),
-          )),
-      StepperData(
-        title: StepperText("Listo!",
-            textStyle: const TextStyle(
-              color: Colors.grey,
-            )),
-      ),
-    ];
+
+    final String foodName =
+        ModalRoute.of(context)!.settings.arguments as String;
+     final DinnerItem dinnerItemFoodName = dinnerItem.firstWhere(
+      (item) => item.category == foodName,
+    );
+    final List<String> foodIngredients = dinnerItemFoodName.ingredientes;
+    final List<String> foodSteps = dinnerItemFoodName.steps;
+    final foodingredientsLength = foodIngredients.length;
+    
+    print(foodIngredients.length);
+    print(foodName);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colors.primary,
-        title: const Text("Tostadas Francesas"),
+        title: Text(foodName),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -86,16 +36,15 @@ class TostadasScreen extends StatelessWidget {
             width: 500,
             //este sizedbox tiene un widget tipo columna
             child: Column(
-              //una lista de widgets
               children: [
                 Container(
-                  padding: const EdgeInsets.only(right: 100.0) +
+                  padding: const EdgeInsets.only(right: 0.0) +
                       const EdgeInsets.only(
                           top:
                               40.0), // Ajusta el espacio superior según sea necesario
-                  child: const Text(
-                    "TOSTADAS FRANCESAS",
-                    style: TextStyle(
+                  child: Text(
+                    foodName.toUpperCase(),
+                    style: const TextStyle(
                       color: Color.fromARGB(255, 42, 120, 179),
                       fontWeight: FontWeight.w900,
                       fontSize: 20,
@@ -111,26 +60,32 @@ class TostadasScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: 20.0), // Ajusta el valor según sea necesario
-                  child: Row(
-                    children: [
-                      Icon(Icons.access_time), // Icono de tiempo
-                      SizedBox(width: 5), // Espacio entre el icono y el texto
-                      Text(
-                        '20 min',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      SizedBox(width: 10),
-                      Icon(Icons.person),
-                      SizedBox(width: 5), // Espacio entre el icono y el texto
-                      Text(
-                        '4 porciones',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceAround, // Alinea los elementos a la izquierda
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.access_time), // Icono de tiempo
+                        const SizedBox(width: 5), // Espacio entre el icono y el texto
+                        Text(
+                          '${dinnerItemFoodName.minutes} min',
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        const Icon(Icons.person),
+                        const SizedBox(width: 5), // Espacio entre el icono y el texto
+                        Text(
+                          '${dinnerItemFoodName.portions} porciones',
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 20,
@@ -159,7 +114,8 @@ class TostadasScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.shopping_basket), // Icono de tiempo
                               SizedBox(
-                                  width: 5), // Espacio entre el icono y el texto
+                                  width:
+                                      5), // Espacio entre el icono y el texto
                               Text(
                                 'INGREDIENTES',
                                 style: TextStyle(
@@ -179,20 +135,19 @@ class TostadasScreen extends StatelessWidget {
                             color: Colors.black, // Color de la raya
                           ),
                         ),
-                         const Padding(
-                           padding: EdgeInsets.only(right:98.0),
-                           child: Text('''
-                            2 huevos
-                            1 taza de Leche Evaporada Ideal®
-                            2 cucharadas de azúcar morena
-                            2 cucharaditas de esencia de vainilla
-                            1 cucharada de Canela en 
-                            Polvo De La Huerta MAGGI®
-                            6 rebanadas de pan de huevo (tipo moña)
-                            2 cucharadas de mantequilla
-                            Fresas, miel o azúcar pulverizada 
-                            para decorar'''),
-                         ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (var ingredient in foodIngredients)
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  ingredient,
+                                  style: const TextStyle(fontSize: 18),
+                                ),
+                              ),
+                          ],
+                        ),
                         const SizedBox(
                           height: 15,
                         ),
@@ -241,6 +196,7 @@ class TostadasScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                      
                       Padding(
                         padding: const EdgeInsets.only(right: 98.0),
                         child: Container(
@@ -249,20 +205,33 @@ class TostadasScreen extends StatelessWidget {
                           color: Colors.black, // Color de la raya
                         ),
                       ),
-                      Padding(
-                          padding: const EdgeInsets.only(top: 20, left: 20),
-                          child: AnotherStepper(
-                            stepperList: stepperData,
-                            stepperDirection: Axis.vertical,
-                            iconWidth:40,
-                            iconHeight: 40,
-                            activeBarColor: colors.primary,
-                            inActiveBarColor: colors.primary,
-                            inverted: false,
-                            verticalGap: 30,
-                            activeIndex: 1,
-                            barThickness: 8,
-                          ),
+                      // Padding(
+                      //     padding: const EdgeInsets.only(top: 20, left: 20),
+                      //     child: AnotherStepper(
+                      //       stepperList: stepperData,
+                      //       stepperDirection: Axis.vertical,
+                      //       iconWidth:40,
+                      //       iconHeight: 40,
+                      //       activeBarColor: colors.primary,
+                      //       inActiveBarColor: colors.primary,
+                      //       inverted: false,
+                      //       verticalGap: 30,
+                      //       activeIndex: 1,
+                      //       barThickness: 8,
+                      //     ),
+                      //   ),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (var steps in foodSteps)
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  steps,
+                                  style: const TextStyle(fontSize: 18),
+                                ),
+                              ),
+                          ],
                         ),
                       const SizedBox(
                         height: 15,

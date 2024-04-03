@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:laboratorio_5_grupon05/config/breakfast_items.dart';
+import 'package:laboratorio_5_grupon05/config/lunch_items.dart';
 
 
-class ListViewRecetasWidget extends StatelessWidget {
-  const ListViewRecetasWidget({super.key});
+class ListViewRecetasLWidget extends StatelessWidget {
+  const ListViewRecetasLWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,11 @@ class ListViewRecetasWidget extends StatelessWidget {
 
     final String foodName =
         ModalRoute.of(context)!.settings.arguments as String;
-    final BreakfastItem breakfastItemFoodName = breakfastItem.firstWhere(
+     final LunchItem lunchItemFoodName = lunchItem.firstWhere(
       (item) => item.category == foodName,
     );
-    final List<String> foodIngredients = breakfastItemFoodName.ingredientes;
-    final List<String> foodSteps = breakfastItemFoodName.steps;
+    final List<String> foodIngredients = lunchItemFoodName.ingredientes;
+    final List<String> foodSteps = lunchItemFoodName.steps;
     final foodingredientsLength = foodIngredients.length;
     
     print(foodIngredients.length);
@@ -69,7 +69,7 @@ class ListViewRecetasWidget extends StatelessWidget {
                         const Icon(Icons.access_time), // Icono de tiempo
                         const SizedBox(width: 5), // Espacio entre el icono y el texto
                         Text(
-                          '${breakfastItemFoodName.minutes} min',
+                          '${lunchItemFoodName.minutes} min',
                           style: const TextStyle(fontSize: 20),
                         ),
                       ],
@@ -79,7 +79,7 @@ class ListViewRecetasWidget extends StatelessWidget {
                         const Icon(Icons.person),
                         const SizedBox(width: 5), // Espacio entre el icono y el texto
                         Text(
-                          '${breakfastItemFoodName.portions} porciones',
+                          '${lunchItemFoodName.portions} porciones',
                           style: const TextStyle(fontSize: 20),
                         ),
                       ],
