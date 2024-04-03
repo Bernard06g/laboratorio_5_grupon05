@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
       title: 'Flutter widgets',
-      theme: AppTheme(selectedColor: 1).theme(),
+      theme: AppTheme(selectedColor: 4).theme(),
       home: const HomePage(),
       routes: {
        '/breakfastsScreen':(context)=> const BreakfastsScreen(),

@@ -17,7 +17,9 @@ Widget build(BuildContext context) {
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
           //agarra el icono del food item 
-          leading: CircleAvatar( child: Icon(foodItem.icon)),
+          leading: CircleAvatar(
+              backgroundImage: AssetImage(foodItem.image),
+          ),
           trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
           title: Text(foodItem.category),
           onTap: () {

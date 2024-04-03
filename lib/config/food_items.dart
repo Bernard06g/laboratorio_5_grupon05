@@ -13,22 +13,22 @@ const foodItems = <FoodItem>[
       category: 'Desayunos',
       link: '/breakfastsScreen',
       icon: Icons.breakfast_dining,
-      image: 'assets/breakfast.png'),
+      image: 'assets/desayuno.jpg'),
       
   FoodItem(
       category: 'Almuerzos',
       link: '/lunchesScreen',
       icon: Icons.lunch_dining,
-      image: 'assets/breakfast.png'),
+      image: 'assets/lunch.jpg'),
   FoodItem(
       category: 'Cenas',
       link: '/dinnersScreen',
       icon: Icons.dinner_dining,
-      image: 'assets/breakfast.png'),
+      image: 'assets/dinner.jpg'),
   FoodItem(
       category: 'Aperitivos',
       link: '/snacksScreen',
       icon: Icons.local_pizza,
-      image: 'assets/breakfast.png'),
+      image: 'assets/snack.jpg'),
 ];
 

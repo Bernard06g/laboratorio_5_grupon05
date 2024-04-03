@@ -1,11 +1,13 @@
-// ignore_for_file: avoid_print, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:laboratorio_5_grupon05/config/breakfast_items.dart';
+import 'package:laboratorio_5_grupon05/config/dinnner_items.dart';
+
 
 
 class ListViewRecetasWidget extends StatelessWidget {
-  const ListViewRecetasWidget({super.key});
+  // ignore: use_super_parameters
+  const ListViewRecetasWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +20,7 @@ class ListViewRecetasWidget extends StatelessWidget {
     );
     final List<String> foodIngredients = breakfastItemFoodName.ingredientes;
     final List<String> foodSteps = breakfastItemFoodName.steps;
-    final foodingredientsLength = foodIngredients.length;
-    
-    print(foodIngredients.length);
-    print(foodName);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colors.primary,
@@ -29,22 +28,18 @@ class ListViewRecetasWidget extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Center(
-          //el sized box es un widget para imponer un tamaño especifico
           child: SizedBox(
-            //height: 2000,
             width: 500,
-            //este sizedbox tiene un widget tipo columna
             child: Column(
               children: [
                 Container(
                   padding: const EdgeInsets.only(right: 0.0) +
                       const EdgeInsets.only(
-                          top:
-                              40.0), // Ajusta el espacio superior según sea necesario
+                          top: 40.0),
                   child: Text(
                     foodName.toUpperCase(),
-                    style: const TextStyle(
-                      color: Color.fromARGB(255, 42, 120, 179),
+                    style: TextStyle(
+                      color: colors.primary,
                       fontWeight: FontWeight.w900,
                       fontSize: 20,
                       letterSpacing: 2.0,
@@ -52,22 +47,21 @@ class ListViewRecetasWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 350, // Ancho del contenedor
-                  height: 1, // Altura del contenedor
-                  color: Colors.black, // Color de la raya
+                  width: 350,
+                  height: 1,
+                  color: Colors.black,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment
-                      .spaceAround, // Alinea los elementos a la izquierda
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.access_time), // Icono de tiempo
-                        const SizedBox(width: 5), // Espacio entre el icono y el texto
+                        const Icon(Icons.access_time),
+                        const SizedBox(width: 5),
                         Text(
                           '${breakfastItemFoodName.minutes} min',
                           style: const TextStyle(fontSize: 20),
@@ -77,7 +71,7 @@ class ListViewRecetasWidget extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(Icons.person),
-                        const SizedBox(width: 5), // Espacio entre el icono y el texto
+                        const SizedBox(width: 5),
                         Text(
                           '${breakfastItemFoodName.portions} porciones',
                           style: const TextStyle(fontSize: 20),
@@ -89,18 +83,14 @@ class ListViewRecetasWidget extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
                 Container(
-                  //height: 250,
                   width: 375,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 252, 252, 252),
-                    borderRadius: BorderRadius.circular(2), //bordes redondos
+                    color: colors.surface,
+                    borderRadius: BorderRadius.circular(2),
                     border: Border.all(
-                      color: Colors.black, // Color del borde
-                      width: 2, // Ancho del borde
+                      color: Colors.black,
+                      width: 2,
                     ),
                   ),
                   child: SingleChildScrollView(
@@ -109,16 +99,15 @@ class ListViewRecetasWidget extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 25.0) +
                               const EdgeInsets.only(top: 20.0),
-                          child: const Row(
+                          child: Row(
                             children: [
-                              Icon(Icons.shopping_basket), // Icono de tiempo
-                              SizedBox(
-                                  width:
-                                      5), // Espacio entre el icono y el texto
+                              const Icon(Icons.shopping_basket),
+                              const SizedBox(
+                                  width: 5),
                               Text(
                                 'INGREDIENTES',
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 42, 120, 179),
+                                  color: colors.primary,
                                   fontSize: 20,
                                   letterSpacing: 2.0,
                                 ),
@@ -129,9 +118,9 @@ class ListViewRecetasWidget extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 98.0),
                           child: Container(
-                            width: 165, // Ancho del contenedor
-                            height: 2, // Altura del contenedor
-                            color: Colors.black, // Color de la raya
+                            width: 165,
+                            height: 2,
+                            color: Colors.black,
                           ),
                         ),
                         Column(
@@ -150,12 +139,6 @@ class ListViewRecetasWidget extends StatelessWidget {
                         const SizedBox(
                           height: 15,
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 80.0),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
                       ],
                     ),
                   ),
@@ -164,14 +147,13 @@ class ListViewRecetasWidget extends StatelessWidget {
                   height: 15,
                 ),
                 Container(
-                  //height: 250,
                   width: 375,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 252, 252, 252),
+                    color: colors.surface,
                     borderRadius: BorderRadius.circular(2),
                     border: Border.all(
-                      color: Colors.black, // Color del borde
-                      width: 2, //bordes redondos
+                      color: Colors.black,
+                      width: 2,
                     ),
                   ),
                   child: Column(
@@ -179,15 +161,15 @@ class ListViewRecetasWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 30.0) +
                             const EdgeInsets.only(top: 20.0),
-                        child: const Row(
+                        child: Row(
                           children: [
-                            Icon(Icons.restaurant_sharp), // Icono de tiempo
-                            SizedBox(
-                                width: 5), // Espacio entre el icono y el texto
+                            const Icon(Icons.restaurant_sharp),
+                            const SizedBox(
+                                width: 5),
                             Text(
                               'PREPARACIÓN',
                               style: TextStyle(
-                                color: Color.fromARGB(255, 42, 120, 179),
+                                color: colors.primary,
                                 fontSize: 20,
                                 letterSpacing: 2.0,
                               ),
@@ -195,51 +177,29 @@ class ListViewRecetasWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      
                       Padding(
                         padding: const EdgeInsets.only(right: 98.0),
                         child: Container(
-                          width: 165, // Ancho del contenedor
-                          height: 2, // Altura del contenedor
-                          color: Colors.black, // Color de la raya
+                          width: 165,
+                          height: 2,
+                          color: Colors.black,
                         ),
                       ),
-                      // Padding(
-                      //     padding: const EdgeInsets.only(top: 20, left: 20),
-                      //     child: AnotherStepper(
-                      //       stepperList: stepperData,
-                      //       stepperDirection: Axis.vertical,
-                      //       iconWidth:40,
-                      //       iconHeight: 40,
-                      //       activeBarColor: colors.primary,
-                      //       inActiveBarColor: colors.primary,
-                      //       inverted: false,
-                      //       verticalGap: 30,
-                      //       activeIndex: 1,
-                      //       barThickness: 8,
-                      //     ),
-                      //   ),
                       Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            for (var steps in foodSteps)
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  steps,
-                                  style: const TextStyle(fontSize: 18),
-                                ),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          for (var steps in foodSteps)
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                steps,
+                                style: const TextStyle(fontSize: 18),
                               ),
-                          ],
-                        ),
+                            ),
+                        ],
+                      ),
                       const SizedBox(
                         height: 15,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 60.0),
-                      ),
-                      const SizedBox(
-                        height: 10,
                       ),
                     ],
                   ),
