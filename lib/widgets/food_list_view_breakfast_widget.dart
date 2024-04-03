@@ -21,7 +21,7 @@ Widget build(BuildContext context) {
           trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
           title: Text(foodItem.category),
           onTap: () {
-            Navigator.pushNamed(context, foodItem.link);
+            Navigator.pushNamed(context, foodItem.link,arguments: foodItem.category,);
           },
         ),
       );
