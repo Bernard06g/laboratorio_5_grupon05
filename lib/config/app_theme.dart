@@ -4,7 +4,7 @@ const Color _customColor= Color.fromRGBO(20, 64, 159, 1);//Color Primario
 const List<Color> _colorTheme=[
 
 _customColor,
-Color.fromARGB(255, 95, 143, 182),
+Color.fromARGB(255, 241, 105, 25),
 Color.fromARGB(255, 202, 255, 204),
 Color.fromARGB(255, 172, 120, 137),
 Color.fromARGB(207, 185, 184, 184),

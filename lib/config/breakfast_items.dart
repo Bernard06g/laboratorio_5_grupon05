@@ -88,7 +88,7 @@ const breakfastItem = <BreakfastItem>[
 ),
   BreakfastItem(
       category: 'Huevos Rancheros',
-      link: '/huevosR',
+      link: '/recetasScreen',
       icon: Icons.breakfast_dining,
       image: 'assets/huevos.jpg',    
      steps: ['1. Calienta una sartén grande a fuego medio y agrega un poco de aceite de oliva.',

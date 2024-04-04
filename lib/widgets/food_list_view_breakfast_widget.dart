@@ -14,7 +14,7 @@ Widget build(BuildContext context) {
       itemBuilder: (BuildContext context, int index) {
         final foodItem = breakfastItem[index];
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: ListTile(
             // Modifica el CircleAvatar para mostrar la imagen
             leading: CircleAvatar(

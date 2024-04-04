@@ -2,9 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:laboratorio_5_grupon05/config/snakcs_items.dart';
 
-class ListViewRecetasSDWidget extends StatelessWidget {
+
+
+class ListViewRecetasSWidget extends StatelessWidget {
   // ignore: use_super_parameters
-  const ListViewRecetasSDWidget({Key? key}) : super(key: key);
+  const ListViewRecetasSWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
