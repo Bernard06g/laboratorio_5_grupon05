@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:laboratorio_5_grupon05/provider/account_provider.dart';
+import 'package:provider/provider.dart';
 
-class LoginWidget extends StatelessWidget {
-  // ignore: use_super_parameters
-  const LoginWidget({Key? key}) : super(key: key);
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
+
+  @override
+  State<LoginWidget> createState() => _LoginWidgetState();
+}
+
+class _LoginWidgetState extends State<LoginWidget> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final accountProvider = context.watch<AccountProvider>();
 
     return Scaffold(
       body: Padding(
@@ -14,12 +24,12 @@ class LoginWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Container(
-              alignment: Alignment.center, 
+            Container(
+              alignment: Alignment.center,
               child: Image.asset(
                 'assets/recetas.jpg',
-                width: 250, 
-                height: 250, 
+                width: 250,
+                height: 250,
               ),
             ),
             const SizedBox(height: 10),
@@ -31,20 +41,19 @@ class LoginWidget extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 15.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _emailController,
+                  decoration: const InputDecoration(
                     labelText: 'Email',
                     border: InputBorder.none,
-                    prefixIcon: Icon(Icons.email), 
+                    prefixIcon: Icon(Icons.email),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
@@ -53,29 +62,30 @@ class LoginWidget extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 15.0),
-                child: SizedBox(
-                  
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Contraseña',
-                      border: InputBorder.none,
-                      prefixIcon: Icon(Icons.password_sharp),
-                    ),
-                    obscureText: true,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: TextField(
+                  controller: _passwordController,
+                  decoration: const InputDecoration(
+                    labelText: 'Contraseña',
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.password_sharp),
                   ),
+                  obscureText: true,
                 ),
               ),
             ),
-            const SizedBox(height:15),
+            const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
+                final email = _emailController.text;
+                //final password = _passwordController.text;                
+                accountProvider.setUser(email);
                 Navigator.pushNamed(context, '/menuScreen');
               },
               child: Text(
                 'Iniciar sesión',
-                style: TextStyle(color: colors.primary,fontSize: 20), 
+                style: TextStyle(color: colors.primary, fontSize: 20),
               ),
             ),
           ],
